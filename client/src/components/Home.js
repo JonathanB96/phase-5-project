@@ -1,7 +1,14 @@
-import React from 'react'
+import React, {useState, useContext} from 'react'
+import { UserContext } from './user'
 
 export default function Home() {
+    
+    const { user, setUser } = useContext(UserContext);
+    console.log(user)
   return (
-    <div>Home</div>
+    <div>Home
+        
+    </div>
+
   )
 }
