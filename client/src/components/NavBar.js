@@ -43,6 +43,16 @@ export default function Header() {
         Home
       </NavLink>
       </li>
+      <li> <NavLink
+        to="/recipes"
+        exact
+        activeStyle={{
+          background: "#000",
+        }}
+      >
+        Recipes
+      </NavLink></li>
+
     <li> <NavLink 
         to="/signup"
         exact

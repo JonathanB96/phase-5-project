@@ -5,8 +5,10 @@ import NavBar from './NavBar';
 import Signup from './Signup';
 import NewRecipeForm from './NewRecipeForm';
 import Login from './Login';
+import RecipeList from './RecipeList';
 import { Route, Switch } from "react-router-dom";
 import {UserProvider} from './user';
+
 
 
 function App() {
@@ -15,6 +17,9 @@ function App() {
       <UserProvider>
         <NavBar />
         <Switch>
+          <Route exact path="/recipes">
+            <RecipeList />
+          </Route>
           <Route exact path="/signup">
             <Signup/>
           </Route>
