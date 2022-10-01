@@ -72,7 +72,7 @@ export default function Header() {
         Login
       </NavLink></li>
     <li> <NavLink
-        to="/addrecipe"
+        to="/addRecipe"
         exact
         activeStyle={{
           background: "#000",
