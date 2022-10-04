@@ -7,14 +7,21 @@ import NewRecipeForm from './NewRecipeForm';
 import Login from './Login';
 import RecipeList from './RecipeList';
 import { Route, Switch } from "react-router-dom";
-import {UserProvider} from './user';
+import { UserContext } from './user'
+import React, {useState, useContext} from 'react'
+
+
+
 
 
 
 function App() {
+  const { user, setUser } = useContext(UserContext);
+
+  console.log(user)
   return (
     <div className="App">
-      <UserProvider>
+     
         <NavBar />
         <Switch>
           <Route exact path="/recipes">
@@ -24,7 +31,7 @@ function App() {
             <Signup/>
           </Route>
           <Route exact path="/login">
-            <Login />
+          {user?<Home user={user}/>:<Login onLogin={setUser}/>}  
           </Route>
           <Route exact path="/addRecipe">
             <NewRecipeForm />
@@ -33,7 +40,7 @@ function App() {
             <Home />
           </Route>
         </Switch>
-      </UserProvider>
+      
      
 
     </div>

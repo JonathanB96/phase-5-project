@@ -1,6 +1,8 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import "../styles/NavBar.css"
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
+import { UserContext } from './user'
+
 // import { useHistory } from 'react-router';
 
 const linkStyles = {
@@ -14,6 +16,8 @@ const linkStyles = {
   };
 
 export default function Header() {
+
+    const { user, setUser } = useContext(UserContext);
 
     function updatemenu() {
         if (document.getElementById('responsive-menu').checked == true) {
@@ -60,7 +64,7 @@ export default function Header() {
           background: "#000",
         }}
       >
-        Sign Up
+       {user?"My list": "Sign Up"}
       </NavLink></li>
     <li><NavLink
         to="/login"
@@ -69,7 +73,7 @@ export default function Header() {
           background: "#000",
         }}
       >
-        Login
+        {user? "Logout": "Login"}
       </NavLink></li>
     <li> <NavLink
         to="/addRecipe"
@@ -90,8 +94,11 @@ export default function Header() {
 
 
 
-  <div style={{float :"right",
-marginRight: "10%", }}><h1 style={{color:"#fff", cursor : "pointer"}}  onClick={handleClick}>//Recipe Viewer</h1></div>
+  <div id="logo-div" style={{float :"right",
+marginRight: "10%", }}>
+  {user?<Link to="/home"><img id="user-icon"src="https://drive.google.com/uc?id=1_OeQkvzmvITM5i4nYvqt5CSWVo51xvng"/></Link>:null}
+  
+  <h1 style={{color:"#fff", cursor : "pointer"}}  onClick={handleClick}>//Recipe Viewer</h1></div>
  </nav>
   </>
 }
