@@ -28,9 +28,16 @@ export default function Header() {
         }
       }
     // const history = useHistory()
-    function handleClick(){
-        // history.push('/')
-      }
+    function handleLogoutClick() {
+    
+      fetch("/logout", { method: "DELETE" }).then((r) => {
+        if (r.ok) {
+          setUser(null);
+          console.log("logged out!")
+        
+        }
+      });
+    }
         
       
   return <>
@@ -68,6 +75,7 @@ export default function Header() {
       </NavLink></li>
     <li><NavLink
         to="/login"
+        onClick={handleLogoutClick}
         exact
         activeStyle={{
           background: "#000",
@@ -96,9 +104,9 @@ export default function Header() {
 
   <div id="logo-div" style={{float :"right",
 marginRight: "10%", }}>
-  {user?<Link to="/home"><img id="user-icon"src="https://drive.google.com/uc?id=1_OeQkvzmvITM5i4nYvqt5CSWVo51xvng"/></Link>:null}
-  
-  <h1 style={{color:"#fff", cursor : "pointer"}}  onClick={handleClick}>//Recipe Viewer</h1></div>
+  {user?<Link to="/"><img id="user-icon"src="https://drive.google.com/uc?id=1_OeQkvzmvITM5i4nYvqt5CSWVo51xvng"/></Link>:null}
+  <Link to="/"><h1 style={{color:"#fff", cursor : "pointer"}}>//Recipe Viewer</h1></Link>
+  </div>
  </nav>
   </>
 }

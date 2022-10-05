@@ -34,7 +34,7 @@ function App() {
           {user?<Home user={user}/>:<Login onLogin={setUser}/>}  
           </Route>
           <Route exact path="/addRecipe">
-            <NewRecipeForm />
+            {user?<NewRecipeForm />:<Login onLogin={setUser}/>}
           </Route>
           <Route exact path="/">
             <Home />

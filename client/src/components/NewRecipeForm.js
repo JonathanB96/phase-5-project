@@ -1,12 +1,14 @@
-import React,{useState} from 'react'
+import React,{useState, useContext} from 'react'
 import '../styles/AddRecipe.css'
 import { Link } from "react-router-dom";
+import { UserContext } from './user'
 // import { useHistory } from 'react-router-dom'
 
 export default function NewRecipeForm() {
   const [recipeName, setRecipeName] = useState("")
   const [imgUrl, setImgUrl] = useState("")
   const [steps, setSteps] = useState("")
+  const { user, setUser } = useContext(UserContext);
 
   const formData = {
     name: "",
