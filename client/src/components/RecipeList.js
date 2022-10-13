@@ -37,7 +37,7 @@ export default function GameList() {
             <div><input type="text" id='search' placeholder='Search for a recipe' onChange={handleSearch}/></div>
             <div className='container'>{recipeList &&
                 recipeList.map((recipe)=>{
-                return <RecipeCard recipe={recipe} key={recipe.id}/>
+                return <RecipeCard recipe={recipe} key={recipe.id} recipeList={recipeList} setRecipeList={setRecipeList}/>
             })}
 
             </div>

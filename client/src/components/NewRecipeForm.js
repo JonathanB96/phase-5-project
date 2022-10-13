@@ -8,12 +8,17 @@ export default function NewRecipeForm() {
   const [recipeName, setRecipeName] = useState("")
   const [imgUrl, setImgUrl] = useState("")
   const [steps, setSteps] = useState("")
+  const [category, setCategory] = useState("")
   const { user, setUser } = useContext(UserContext);
+  const [cuisine, setCuisine] = useState("")
 
   const formData = {
     name: "",
-    image:"",
-    steps:""}
+    steps:"",
+    image_url:"",
+    category:"",
+    user_id:"",
+    cuisine:""}
   // const history = useHistory()
 
   function handleName(e){
@@ -28,29 +33,37 @@ export default function NewRecipeForm() {
     setSteps(e.target.value)
 
   }
+  function handleCategory(e){
+    setCategory(e.target.value)
+  }
+  function handleCuisine(e){
+    setCuisine(e.target.value)
 
+  }
   function handleSubmit(e){
     e.preventDefault()
 
       formData.name = recipeName
-      formData.image = imgUrl
+      formData.image_url= imgUrl
       formData.steps= steps
+      formData.category= category
+      formData.user_id = user.id
+      formData.cuisine = cuisine
 
-      fetch("http://localhost:3000/recipes", {
+      fetch(`/recipes`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json"},
       body: JSON.stringify(formData)
-    }).then(()=>{alert("success!")})  
+    }).then((r)=>r.json())
+      .then((newReview)=>{
+        console.log(newReview)
+      })  
     
     }
 
-   
-
-   
-       
-        
+          
     
 
   return <>
@@ -64,6 +77,27 @@ export default function NewRecipeForm() {
     <label>Image URL</label>
     <input type="text"  onChange ={handleUrl}
     value={imgUrl} id="imageUrl" placeholder="Image URL here"/>
+
+    
+    <select value={category} onChange={handleCategory}>
+      <option>Select category</option>
+      <option>Breakfast</option>
+      <option>Lunch</option>
+      <option>Dinner</option>
+      <option>Salad</option>
+      <option>Baked-good</option>
+    </select>
+
+    <select value={cuisine} onChange={handleCuisine}>
+      <option>Select cuisine</option>
+      <option>American</option>
+      <option>Global</option>
+      <option>Cuisine</option>
+      <option>Italian</option>
+      <option>Vegetarian</option>
+      <option>Asian</option>
+      <option>Mexican</option>
+    </select>
 
     <label>Steps</label>
     <textarea id="steps"  onChange ={handleSteps}

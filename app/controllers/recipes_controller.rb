@@ -19,8 +19,16 @@ class RecipesController < ApplicationController
 
         user = User.find_by(id: session[:user_id])
         if user
-            category = Category.find_by(name: params[:category])        
-            recipe = category.recipes.create(recipe_params)          
+            byebug
+            # category = Category.find_by(name: params[:category])      
+            # recipe = category.recipes.create(recipe_params) 
+            # render json: recipe, status: :created 
+            recipe = Recipe.create(name: params[:name], 
+            steps: params[:steps], image_url: params[:image_url],
+            category_id: Category.find_by("name LIKE ?", params[:category]).id, 
+            user_id: params[:user_id],
+            cuisine_id: Cuisine.find_by("name LIKE ?", params[:cuisine]).id)
+            render json: recipe, status: :created      
             
         else
             render json: {errors: ["unauthorized"]}, status: :unauthorized   
@@ -59,7 +67,7 @@ class RecipesController < ApplicationController
     private
     
     def recipe_params
-      params.permit(:name, :steps, :image_url)
+      params.permit(:name, :steps, :image_url, :user_id)
     end
 
     def not_found_response
