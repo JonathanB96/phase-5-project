@@ -18,10 +18,10 @@ class UsersController < ApplicationController
             end           
     end  
     
-    def create_favorite
+    def user_list
         user = User.find(params[:id])
-        new_favorite = user.favorites.create(recipe_id: params[:recipe_id], user_id: params[:user_id])
-        render json: new_favorite, status: :created
+        recipes = user.recipes
+        render json: recipes
 
     end
 

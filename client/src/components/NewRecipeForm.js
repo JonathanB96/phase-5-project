@@ -85,7 +85,7 @@ export default function NewRecipeForm() {
       <option>Lunch</option>
       <option>Dinner</option>
       <option>Salad</option>
-      <option>Baked-good</option>
+      <option>Baked-goods</option>
     </select>
 
     <select value={cuisine} onChange={handleCuisine}>

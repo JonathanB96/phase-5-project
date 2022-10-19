@@ -6,6 +6,7 @@ import Signup from './Signup';
 import NewRecipeForm from './NewRecipeForm';
 import Login from './Login';
 import RecipeList from './RecipeList';
+import MyList from './MyList';
 import { Route, Switch } from "react-router-dom";
 import { UserContext } from './user'
 import React, {useState, useContext} from 'react'
@@ -28,7 +29,7 @@ function App() {
             <RecipeList />
           </Route>
           <Route exact path="/signup">
-            <Signup/>
+           {user?<MyList/>:<Signup/>} 
           </Route>
           <Route exact path="/login">
           {user?<Home user={user}/>:<Login onLogin={setUser}/>}  

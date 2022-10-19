@@ -3,6 +3,9 @@
 	color: #000;
 	height: 78px;
 	padding-left: 18px;
+	width: 100%;
+	position: fixed;
+	margin-top: -25px;
    
    	
 }

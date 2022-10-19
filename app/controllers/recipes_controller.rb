@@ -19,7 +19,6 @@ class RecipesController < ApplicationController
 
         user = User.find_by(id: session[:user_id])
         if user
-            byebug
             # category = Category.find_by(name: params[:category])      
             # recipe = category.recipes.create(recipe_params) 
             # render json: recipe, status: :created 

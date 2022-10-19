@@ -71,7 +71,7 @@ export default function Header() {
           background: "#000",
         }}
       >
-       {user?"My list": "Sign Up"}
+       {user?"Tips": "Sign Up"}
       </NavLink></li>
     <li><NavLink
         to="/login"
