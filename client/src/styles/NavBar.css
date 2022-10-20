@@ -1,11 +1,12 @@
 #menu {
-	background: #e4d2b0;
+	background: rgb(228, 210, 176);
 	color: #000;
 	height: 78px;
 	padding-left: 18px;
 	width: 100%;
 	position: fixed;
 	margin-top: -25px;
+	z-index: 1;
    
    	
 }
