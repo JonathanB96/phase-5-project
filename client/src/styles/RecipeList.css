@@ -8,6 +8,9 @@
    height: 100%;
 
   }
+  .top-div{
+    margin-top: 50px;
+  }
   
   
   
@@ -26,6 +29,7 @@
     width: 30%;
     height: 2rem;
     margin-bottom: 20px;
+    margin-top: 5%;
     
    }
 

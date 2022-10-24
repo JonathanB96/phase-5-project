@@ -26,7 +26,7 @@ export default function GameList() {
       return
     }
     const filteredValues = recipeList.filter((item)=>{
-      return item.title.toLowerCase().indexOf(e.target.value.toLowerCase()) !== -1
+      return item.name.toLowerCase().indexOf(e.target.value.toLowerCase()) !== -1
     })
     setRecipeList(filteredValues)
   }

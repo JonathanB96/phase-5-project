@@ -2,6 +2,7 @@ import React, {useState, useContext} from 'react'
 import '../styles/Card.css'
 import {  Link } from "react-router-dom";
 import { UserContext } from './user'
+import del from '../styles/images/delete.jpg'
 
 export default function Card({recipe, recipeList, setRecipeList}) {
   const [btn, setBtn] = useState(true)
@@ -44,9 +45,12 @@ export default function Card({recipe, recipeList, setRecipeList}) {
        
            
         </div>
-        
-    {user?<button onClick={handleDelete}>Delete</button>:null}    
-    <button className="card-btn" onClick={handleClick} style={{background: !btn? "rgba(0, 0, 0, 0.5)": "#000"}}>{!btn?"Hide Recipe": "Show Recipe"}</button>
+     <div id='card-bottom'>
+     {user?<button id="del-btn"onClick={handleDelete}>Delete</button>:null} 
+      
+    <button className="card-btn" onClick={handleClick} style={{background: !btn? "rgba(0, 0, 0, 0.5)": "#000"}}>{!btn?"Hide Recipe": "Show Recipe"}</button>      
+    </div>   
+    
   </div>
   
   </>

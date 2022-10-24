@@ -4,6 +4,12 @@
     border: 1px solid black;
    
 }
+#card-bottom{
+    margin-top: -60px;
+    display: flex;
+    justify-content: space-between;
+    
+}
 .overlay
 {
     background: rgba(255,255,255, 0.5);
@@ -13,11 +19,11 @@
     border-radius: 10px 0 0 10px;
     text-align: center;
     box-sizing: border-box;
-    
-
-    
-
-
+}
+#del-btn{
+    width: 190px;
+    background: rgb(255, 111, 0);
+    float: right;
 }
 .overlay2{
   -webkit-animation-name: slideInLeft;
@@ -74,9 +80,9 @@ h4
     background: #000;
     width: 150px;
    
-    margin: -44px 0px 100px 0px ;
+    /* margin: -44px 0px 100px 0px ; */
   
-    position: absolute;
+    /* position: absolute; */
     z-index: 2;
 
 
