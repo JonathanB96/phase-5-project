@@ -57,17 +57,17 @@ export default function Signup({onLogin}) {
     <p>Please fill in this form to create an account.</p>
     <hr/>
 
-    <label><b>Email</b></label>
+    <label><b>Username</b></label>
     <input type="text" value={username} onChange={handleUsername}
      placeholder="Enter Username"required/>
 
     <label><b>Password</b></label>
     <input type="password" value={password} onChange={handlePsw}
-     placeholder="Enter Password" required/>
+     placeholder="Enter Password" required className='psw'/>
 
     <label><b>Repeat Password</b></label>
     <input type="password" value={passwordConfirmation} onChange={handlePsw2} 
-    placeholder="Repeat Password" required/>
+    placeholder="Repeat Password" required className='psw'/>
 
     <div className="clearfix">
       

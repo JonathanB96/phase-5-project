@@ -30,7 +30,7 @@ export default function MyList() {
       })
       }
   return <>
-    <div className='home'>
+    <div class='tip-container'>
       
      
       <div className='main'>

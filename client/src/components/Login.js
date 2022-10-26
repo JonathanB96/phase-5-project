@@ -49,7 +49,7 @@ export default function Login({onLogin}) {
 
     <label><b>Password</b></label>
     <input type="password" value={password} onChange={handlePsw}
-     placeholder="Enter Password" required/>
+     placeholder="Enter Password" required className='psw'/>
 
     <div className="clearfix">
       

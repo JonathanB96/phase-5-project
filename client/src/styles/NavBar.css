@@ -6,7 +6,7 @@
 	width: 100%;
 	position: fixed;
 	margin-top: -25px;
-	z-index: 1;
+	z-index: 10;
    
    	
 }
@@ -109,4 +109,5 @@
 	#menu input:checked + label {color:white}
 	#menu input:checked + label:before {content:"\00d7"}
 	#menu input:checked ~ ul {display:block}
+	#menu {margin-top: 1px}
 }

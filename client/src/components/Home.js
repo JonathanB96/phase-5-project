@@ -18,14 +18,19 @@ export default function Home() {
      
       <div className='main'>
         
-        {user?null:<div> 
+        {/* {user?<Link to="/recipes" className='myButton'>See all recipes</Link>:<div> 
         <h1 className='main-msg' id='no-user'>Create an account today</h1>        
         <p>Already a member? <Link to="/login" className='button-23'>Login</Link></p>
-        </div>}
+        </div>} */}
+       
+        
+
         
         
        
         <div className="main-container">
+        {user? null:<Link to="/recipes" className='myButton'>See all recipes</Link>}
+
 
               <div class="parallax-1"> 
                   
