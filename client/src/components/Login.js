@@ -37,7 +37,7 @@ export default function Login({onLogin}) {
   }
 
   return<>
-   <form onSubmit={handleSubmit}>
+   <form onSubmit={handleSubmit} className="form-container">
     <div className="form-container">
     <h1>Login</h1>
    

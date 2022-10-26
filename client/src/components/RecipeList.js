@@ -32,7 +32,7 @@ export default function GameList() {
   }
  
   
-  return (<div>
+  return (<div id="wrapper">
             
             <div><input type="text" id='search' placeholder='Search for a recipe' onChange={handleSearch}/></div>
             <div className='container'>{recipeList &&

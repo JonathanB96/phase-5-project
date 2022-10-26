@@ -67,7 +67,7 @@ export default function NewRecipeForm() {
     
 
   return <>
-    <div className="addrecipe-container">
+    <div className="form-container">
   <form id='addRecipe-form' onSubmit={handleSubmit}>
 
     <label>Recipe name</label>
