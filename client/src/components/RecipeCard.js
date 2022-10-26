@@ -12,7 +12,8 @@ export default function Card({recipe, recipeList, setRecipeList}) {
  
   function handleClick(){
     setBtn(!btn)   
-    console.log(recipe) 
+    console.log(recipe.user.username) 
+    console.log(user.username)
   }
 
   function handleDelete(){   
@@ -46,7 +47,7 @@ export default function Card({recipe, recipeList, setRecipeList}) {
            
         </div>
      <div id='card-bottom'>
-     {user?<button id="del-btn"onClick={handleDelete}>Delete</button>:null} 
+     {user&&user.username===recipe.user.username?<button id="del-btn"onClick={handleDelete}>Delete</button>:null} 
       
     <button className="card-btn" onClick={handleClick} style={{background: !btn? "rgba(0, 0, 0, 0.5)": "#000"}}>{!btn?"Hide Recipe": "Show Recipe"}</button>      
     </div>   

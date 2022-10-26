@@ -41,7 +41,7 @@ export default function Home() {
               <div className="parallax-3"></div>
               <div className="parallax-4"></div>
               <div className=""></div>
-              </div>
+          </div>
 
       
     

@@ -29,7 +29,7 @@ function App() {
             <RecipeList />
           </Route>
           <Route exact path="/signup">
-           {user?<MyList/>:<Signup/>} 
+           {user?<MyList/>:<Signup onLogin={setUser}/>} 
           </Route>
           <Route exact path="/login">
           {user?<Home user={user}/>:<Login onLogin={setUser}/>}  

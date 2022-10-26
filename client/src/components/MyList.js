@@ -15,6 +15,20 @@ export default function MyList() {
           
           });
       }, []);
+
+      function download(){
+
+        fetch("/pages/download")
+        .then((r) => {
+         return r.blob()
+        })
+        .then((data)=>{ 
+         let a = document.createElement("a")
+        a.href = window.URL.createObjectURL(data)
+        a.download = "9_cooking_tips"
+        a.click()       
+      })
+      }
   return <>
     <div className='home'>
       
@@ -31,6 +45,7 @@ export default function MyList() {
               </div>
               <div className="text-1">
                   <h1>Cooking tips for beginners</h1>
+                  <button id="btn" onClick={download}>Download PDF file</button> <br/>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora corporis ad, optio quasi molestiae esse nam saepe libero animi, ullam sit ipsa suscipit magni reiciendis dicta rerum, error rem! Nostrum?</div>
 
               <div className="div-2"></div>
